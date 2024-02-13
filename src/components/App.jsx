@@ -13,11 +13,11 @@ const App = () => {
   ]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:9003/categories")
+    fetch("https://journal-api-8v3b.onrender.com/categories")
       .then((res) => res.json())
       .then((data) => setCategories(data));
 
-    fetch("http://127.0.0.1:9003/entries")
+    fetch("https://journal-api-8v3b.onrender.com/entries")
       .then((res) => res.json())
       .then((data) => setEntries(data));
   }, []);
@@ -35,7 +35,7 @@ const App = () => {
       content: content,
     };
     // POST new entry to server
-    const res = await fetch("http://127.0.0.1:9003/entries", {
+    const res = await fetch("https://journal-api-8v3b.onrender.com/entries", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
